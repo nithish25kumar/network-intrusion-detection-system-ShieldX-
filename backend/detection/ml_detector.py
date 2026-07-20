@@ -57,6 +57,9 @@ class MLDetector:
         for col in self.feature_columns:
             row.append(flow_features.get(col, 0.0))
         X = np.array(row, dtype=float).reshape(1, -1)
+        # Same cleanup applied during training: replace inf/-inf/NaN (can occur
+        # from divide-by-zero on zero-duration flows) so the scaler doesn't choke.
+        X = np.nan_to_num(X, nan=0.0, posinf=0.0, neginf=0.0)
         X_scaled = self.scaler.transform(X)
 
         proba = self.model.predict_proba(X_scaled)[0]
