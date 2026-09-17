@@ -8,8 +8,7 @@ import '../models/alert.dart';
 /// - Android emulator talking to a backend on your dev machine: 10.0.2.2
 /// - iOS simulator / desktop / web: localhost
 /// - Physical device: your machine's LAN IP, e.g. 192.168.1.42
-const String kBackendBaseUrl = 'http://10.255.97.155:8003';
-
+const String kBackendBaseUrl = 'http://10.0.2.2:8000';
 class ApiService {
   String? _token;
 
