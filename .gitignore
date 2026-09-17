@@ -60,4 +60,8 @@ Thumbs.db
 .swiftpm/
 migrate_working_dir/
 
-#.vscode/
+#.vscode/backend/models/ids_model.pkl
+backend/models/*.pkl
+backend/models/ids_model.pkl
+backend/models/*.pkl
+backend/models/ids_model.pkl
